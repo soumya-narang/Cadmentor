@@ -16,15 +16,29 @@ CADMentor bridges this gap. It acts as an in-editor assistant within AutoCAD its
 ### Part 1: Backend Setup
 The geometry engine relies on a local Python server to process the natural language of the question before computing the math.
 
-1. Open a terminal and navigate to the `backend` folder.
-2. Install the required dependencies by running:
-   pip install -r requirements.txt
-3. Copy the `.env.example` file to a new file named `.env`.
-4. Open the `.env` file and insert your Google Gemini API key.
-5. Start the backend server by running:
-   python main.py
-   
-Keep this terminal window running in the background while you use the plugin.
+1. **Open a Command Prompt or Terminal:**
+   * On Windows, press the Windows key, type `cmd`, and press Enter.
+2. **Navigate to the Backend Folder:**
+   * Use the `cd` command to change directories to where you downloaded CADMentor. For example:
+     `cd C:\Path\To\CADMentor\backend`
+3. **Install the Required Python Packages:**
+   * Type the following command and press Enter:
+     `pip install -r requirements.txt`
+   * Wait for the installation to finish. This downloads the necessary tools for the server to run.
+4. **Set Up Your API Key:**
+   * In the `backend` folder, you will see a file named `.env.example`.
+   * Create a copy of this file and rename the copy to exactly `.env` (make sure there is no `.txt` at the end).
+   * Open the new `.env` file using Notepad or any text editor.
+   * Go to Google AI Studio (https://aistudio.google.com/), sign in, and create a free Gemini API key.
+   * Paste your key into the `.env` file so it looks like this: `GEMINI_API_KEY="your_api_key_here"`
+   * Save and close the file.
+5. **Start the Server:**
+   * Go back to your Command Prompt (which should still be in the `backend` folder).
+   * Type the following command and press Enter:
+     `python main.py`
+   * You should see a message indicating the server has started successfully.
+
+**Important:** Keep this Command Prompt window open and running in the background the entire time you are using the AutoCAD plugin. If you close it, the plugin will not be able to process new questions.
 
 ### Part 2: AutoCAD Plugin Setup
 1. Open AutoCAD.
